@@ -36,6 +36,24 @@ users_schema = UserSchema(many=True)
 
 API_KEY = os.environ.get('API_KEY')
 
+rate_limit_data = {}
+MAX_REQUESTS_PER_SECOND = 1
+MAX_REQUESTS_PER_30_SECONDS = 3
+
+@app.before_request
+def rate_limit():
+  now = time.time()
+  ip = request.remote_addr
+  hist = rate_limit_data.get(ip, [])
+  
+  hist = [t for t in hist if now - t < 30]
+  
+  if len(hist) >= MAX_REQUESTS_PER_30_SECONDS or (len(hist) >= 1 and now - hist[-1] < 1):
+    return jsonify({'error': 'Too many requests'}), 429
+
+  hist.append(now)
+  rate_limit_data[ip] = hist
+
 
 @app.route('/')
 def index():
