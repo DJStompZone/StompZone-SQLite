@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StompZone SQL Extravaganza</title>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-shadow: 3px 3px 3px #2f4f4f;
+      overflow: hidden;
+      perspective: 1px;
+      transform-style: preserve-3d;
+    }
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(60deg, #3f87a6, #ebf8e1, #f69d3c);
+      background-size: 300% 300%;
+      animation: gradient 6s linear infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0 50%; }
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .circle:nth-child(odd) { background: #f69d3c; }
+    .circle:nth-child(even) { background: #3f87a6; }
+
+    @keyframes float {
+      0% { transform: translateY(10vh) translateX(-9vw); filter: hue-rotate(0deg);}
+      25% { transform: translateY(7vh) translateX(7vw); filter: hue-rotate(90deg);}
+      50% { transform: translateY(0vh) translateX(20vw); filter: hue-rotate(180deg);}
+      75% { transform: translateY(-3vh) translateX(9vw); filter: hue-rotate(270deg);}
+      100% { transform: translateY(10vh) translateX(-9vw); filter: hue-rotate(0deg);}
+    }
+
+    h1 {
+      position: relative;
+      font-size: 2.5em;
+      text-align: center;
+      padding-top: 20vh;
+      animation: color-change 5s infinite;
+      z-index: 1;
+    }
+
+    p {
+      position: relative;
+      font-size: 1em;
+      font-weight: 800;
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <div class="circle" style="width: 25vw; height: 25vw; top: -10%; left: 5%; animation-duration: 6s;"></div>
+  <div class="circle" style="width: 30vw; height: 30vw; top: 20%; left: 70%; animation-duration: 8s;"></div>
+  <div class="circle" style="width: 40vw; height: 40vw; top: 60%; left: 30%; animation-duration: 10s;"></div>
+  <h1><s>Welcome to</s> StompZone SQL!</h1>
+  <p>
+  StompZone SQL's vast,<br>
+  No invite? Reflect your path,<br>
+  Let's see your hall pass!
+</p>
+<p>A haiku ;)</p>
+</body>
+
+</html>
